@@ -26,11 +26,7 @@ yarn.lock
 .env.test.local
 .env.production.local
 
-# TypeScript configuration
-tsconfig.json
-
 # NPM configuration
-package.json
 package-lock.json
 yarn.lock
 
