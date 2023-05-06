@@ -8,6 +8,10 @@ dist/
 .vscode/
 .idea/
 
+# random outputs
+img/
+tmp/
+
 # Logs and debugging files
 *.log
 *.log.*
