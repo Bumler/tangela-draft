@@ -41,8 +41,16 @@ app.use(bodyParser.json());
 app.use(cors());
 
 import draftPoolHandler from './handlers/get-draft-pool-handler';
+import { generateDraftPoolForTierConfig, testMonTierConfig } from './draftGenerator/tier-based-generator';
+import { mapPokemonData } from './draftGenerator/poke-mapper';
+import { setMappedDraftPool } from './dataStore/mock-db';
 app.use('/draftPool', draftPoolHandler);
 
 app.listen(3001, async () => {
+    // pre initializing the "db"
+    const mappedMons = await Promise.all(
+        Array.from(generateDraftPoolForTierConfig(testMonTierConfig)).map(mapPokemonData));
+    setMappedDraftPool(mappedMons);
+
     console.log('listening on port 3001');
 });

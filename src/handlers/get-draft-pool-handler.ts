@@ -1,15 +1,10 @@
 import { Request, Response, Router } from 'express';
-import { generateDraftPoolForTierConfig, testMonTierConfig } from '../draftGenerator/tier-based-generator';
-import { mapPokemonData } from '../draftGenerator/poke-mapper';
+import { getMappedDraftPool } from '../dataStore/mock-db';
 
 const app = Router();
 
 app.get('/', async (req: Request, res: Response) => {
-  const draftPool = generateDraftPoolForTierConfig(testMonTierConfig);
-  const mappedMons = await Promise.all(
-        Array.from(draftPool).map(mapPokemonData));
-        
-  res.send(mappedMons);
+  res.send(getMappedDraftPool());
 });
 
 export default app;
