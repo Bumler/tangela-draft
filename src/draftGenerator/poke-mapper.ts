@@ -1,6 +1,5 @@
 import axios from "axios";
 import { pokemon } from "../common-interfaces/pokemon";
-import { json } from "stream/consumers";
 import { TierData } from "./tier-based-generator";
 
 export async function mapPokemonData(tieredMon: TierData): Promise<pokemon> {
@@ -8,14 +7,14 @@ export async function mapPokemonData(tieredMon: TierData): Promise<pokemon> {
     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
 
     const pokemonData = response.data;
-    console.log(JSON.stringify(pokemonData.sprites))
+    console.log(pokemonName)
 
     const gameData = {
-        type1: pokemonData.types[0].type.name,
-        type2: pokemonData.types[1] ? pokemonData.types[1].type.name : null,
+        type1: capitalize(pokemonData.types[0].type.name),
+        type2: pokemonData.types[1] ? capitalize(pokemonData.types[1].type.name) : undefined,
         abilities: pokemonData.abilities.map((ability: { ability: { name: string; url: string; }; }) => {
             return {
-                name: ability.ability.name,
+                name: capitalize(ability.ability.name),
                 description: ability.ability.url // todo - get description from this url
                 // potentially better to use GET https://pokeapi.co/api/v2/ability/{id or name}/
                 // that has the full description
@@ -38,9 +37,13 @@ export async function mapPokemonData(tieredMon: TierData): Promise<pokemon> {
     }
 
     return {
-        name: pokemonName,
+        name: capitalize(pokemonName),
         tier,
         gameData,
         displayData
     }
+}
+
+function capitalize(str: string) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }

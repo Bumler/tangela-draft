@@ -502,7 +502,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	porygon2: {
 		tier: "NU",
 	},
-	porygonz: {
+	"porygon-z": {
 		tier: "UUBL",
 	},
 	omanyte: {
@@ -1330,13 +1330,13 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	burmy: {
 		tier: "LC",
 	},
-	wormadam: {
+	"wormadam-plant": {
 		tier: "NU",
 	},
-	wormadamsandy: {
+	"wormadam-sandy": {
 		tier: "NU",
 	},
-	wormadamtrash: {
+	"wormadam-trash": {
 		tier: "NU",
 	},
 	mothim: {
@@ -1456,19 +1456,19 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	rotom: {
 		tier: "UU",
 	},
-	rotomheat: {
+	"rotom-heat": {
 		tier: "OU",
 	},
-	rotomwash: {
+	"rotom-wash": {
 		tier: "OU",
 	},
-	rotomfrost: {
+	"rotom-frost": {
 		tier: "OU",
 	},
-	rotomfan: {
+	"rotom-fan": {
 		tier: "OU",
 	},
-	rotommow: {
+	"rotom-mow": {
 		tier: "OU",
 	},
 	uxie: {
@@ -1506,14 +1506,5 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	},
 	darkrai: {
 		tier: "Uber",
-	},
-	shaymin: {
-		tier: "(OU)",
-	},
-	shayminsky: {
-		tier: "Uber",
-	},
-	arceus: {
-		tier: "AG",
 	}
 };

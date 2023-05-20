@@ -14,15 +14,15 @@ export interface TierData {
 export const testMonTierConfig = [
     {
         tiers : new Set<Tier>(["OU", ("(OU)")]),
-        n : 6
+        n : 3
     },
     {
         tiers : new Set<Tier>(["UU", "UUBL"]),
-        n : 6
+        n : 3
     },
     {
         tiers : new Set<Tier>(["NU", "NUBL"]),
-        n : 6
+        n : 3
     }
 ]
 
