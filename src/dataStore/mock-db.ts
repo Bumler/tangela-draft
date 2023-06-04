@@ -8,3 +8,9 @@ export function setMappedDraftPool(pool: pokemon[]) {
 export function getMappedDraftPool() {
     return draftPool;
 }
+
+export function draftMon(name: string, trainerId: string) {
+    const index = draftPool.findIndex(p => p.name === name);
+    draftPool[index].isDrafted = true;
+    draftPool[index].trainerId = trainerId;
+}

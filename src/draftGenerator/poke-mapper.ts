@@ -40,7 +40,8 @@ export async function mapPokemonData(tieredMon: TierData): Promise<pokemon> {
         name: capitalize(pokemonName),
         tier,
         gameData,
-        displayData
+        displayData,
+        isDrafted: false
     }
 }
 

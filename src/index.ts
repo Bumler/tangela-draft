@@ -41,10 +41,12 @@ app.use(bodyParser.json());
 app.use(cors());
 
 import draftPoolHandler from './handlers/get-draft-pool-handler';
+import draftMonHandler from './handlers/draft-mon-handler';
 import { generateDraftPoolForTierConfig, testMonTierConfig } from './draftGenerator/tier-based-generator';
 import { mapPokemonData } from './draftGenerator/poke-mapper';
 import { setMappedDraftPool } from './dataStore/mock-db';
 app.use('/draftPool', draftPoolHandler);
+app.use('/draftMon', draftMonHandler)
 
 app.listen(3001, async () => {
     // pre initializing the "db"

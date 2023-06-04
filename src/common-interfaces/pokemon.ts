@@ -3,6 +3,8 @@ export interface pokemon {
     tier: string
     gameData: gameData
     displayData: displayData;
+    isDrafted: boolean;
+    trainerId?: string;
 }
 
 export interface gameData {
